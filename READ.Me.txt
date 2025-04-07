@@ -1,0 +1,38 @@
+# Microservices API Testing
+
+This Postman collection covers all CRUD operations for the Student and Course microservices, along with inter-service communication tests.
+
+## Microservices Tested
+
+- `student-service` (Port 8081)
+- `course-service` (Port 8082)
+- `api-gateway` (Port 8083)
+
+## Test Coverage
+
+### Student Service (`/students`)
+- `POST /students` → Add new student
+- `GET /students` → List all students
+- `GET /students/{id}` → Get student by ID
+- `PUT /students/{id}` → Update student
+- `DELETE /students/{id}` → Delete student
+- `GET /students/courses` → Get all courses (via API Gateway)
+
+### Course Service (`/api/courses`)
+- `POST /api/courses` → Add new course
+- `GET /api/courses` → List all courses
+- `GET /api/courses/{id}` → Get course by ID
+- `PUT /api/courses/{id}` → Update course
+- `DELETE /api/courses/{id}` → Delete course
+
+##  Notes
+
+- JWT authentication is **disabled** for now(because the token was not getting in the postman,I have tried so many time the URL hit was working and getting responses but the token wasn't getting somehow)
+- Responses tested using Postman 
+- Circuit Breaker fallback tested
+
+##  How to Import
+
+1. Open Postman → **Import**
+2. Upload `microservices-collection.json`
+3. Start testing
